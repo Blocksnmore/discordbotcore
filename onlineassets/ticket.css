@@ -20,14 +20,18 @@ div{
   padding: 10px;
 }
 .msg{
-  width: 99%;
+  width:99%;
+  background-color: #23272A;
+  /*border: 4px solid #23272A;*/
+  border-radius: 25px;
 }
 .text{
   float: left;
 }
 /* Header stuff */
 .header1{
-  background-color:#222427;
+  border-radius: 25px;
+  background-color: #7289DA;
   width: 99%;
 }
 .header2{
