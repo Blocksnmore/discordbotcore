@@ -1,0 +1,12 @@
+# Created by Blocks_n_more
+
+bot:
+  token: "BOT TOKEN" # Discord bot token
+  prefixes: # Bot prefix
+    - "-"
+  status:
+    staus: "online" # online | idle | dnd | invisible
+    type: "PLAYING" # PLAYING | WATCHING | LISTENING
+    message: "With open source code" # Status message
+  embed:
+    color: "#00FFFF" # Any HEX color code or RANDOM
