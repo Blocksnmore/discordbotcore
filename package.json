@@ -1,0 +1,21 @@
+{
+  "name": "dbc-v2",
+  "version": "1.0.0",
+  "description": "Open source discord bot containing everything you will ever need",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "node-fetch": "^2.6.1",
+    "quick.db": "^7.1.3",
+    "yaml": "^1.10.0",
+    "canvacord": "^5.0.8",
+    "canvas": "^2.6.1",
+    "ms": "^2.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm install && node index.js"
+  },
+  "author": "Blocks_n_more",
+  "license": "ISC"
+}
