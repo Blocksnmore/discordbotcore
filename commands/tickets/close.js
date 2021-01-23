@@ -29,7 +29,7 @@ exports.run = async function (bot, msg, db) {
       description: "Closing ticket in 5 seconds!",
     })
   );
-  
+
   msg.channel.messages
     .fetch({
       limit: require("../../utils/yml.js")("./config/commands/ticket.yml")
@@ -72,8 +72,10 @@ exports.run = async function (bot, msg, db) {
               title: "Ticket closed!",
               description:
                 "Your ticket in " +
-                msg.guild.id +
-                " has been closed! Attached is the transcript",
+                msg.guild.name +
+                " has been closed by " +
+                msg.author.tag +
+                "! Attached is the transcript",
             })
           );
       if (tkconfig.sendtranscript)
