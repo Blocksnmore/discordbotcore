@@ -1,3 +1,5 @@
 config/
+# Ignore this as i use said path for debugging code
+configs/ 
 json.sqlite
 node_modules
