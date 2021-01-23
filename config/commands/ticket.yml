@@ -1,0 +1,10 @@
+# Ticket configuration
+enabled: true
+maxtickets: 1 # Maximum amount of tickets a user can have open
+category: "SERVER CATEGORY" # Category tickets go to
+role: "SUPPORT ROLE" # Role to get access to ticket
+pingsupport: true # If the bot should ping the support role
+logtickets: true # If ticket creation/deletion should be logged
+logchannel: "TICKET LOG CHANNEL" # Channel that ticket creation/deletion gets logged | leave this blank if logtickets is false
+sendtranscript: true # If all participating users should get a transcript
+msglimit: 100 # Limit for messages inside of transcript
