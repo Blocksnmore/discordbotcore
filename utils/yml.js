@@ -7,5 +7,6 @@ const { readFileSync } = require("fs");
  * @returns JSON 
  */
 module.exports = function (dir) {
+  dir = "./dev "+dir.substring("./".length); // For development
   return parse(readFileSync(dir, "utf8"));
 };

@@ -144,6 +144,7 @@ function formatmsg(json) {
     });
   return returnmsg + "</div>";
 }
+exports.formatmsg = formatmsg;
 
 function makehtml(html, json) {
   let returnmsg =
@@ -158,3 +159,4 @@ function makehtml(html, json) {
     `.header1{border-radius:25px;background-color:#7289da;width:99%;}.header2{float:left;}</style>`;
   return returnmsg;
 }
+exports.makehtml = makehtml;
