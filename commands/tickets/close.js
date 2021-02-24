@@ -64,7 +64,7 @@ exports.run = async function (bot, msg, db) {
         bot.users.cache
           .get(
             db.get(
-              "ticketdata." + msg.guild.id + ".ticketowner" + msg.channel.id
+              "ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id
             )
           )
           .send(
@@ -82,7 +82,7 @@ exports.run = async function (bot, msg, db) {
         bot.users.cache
           .get(
             db.get(
-              "ticketdata." + msg.guild.id + ".ticketowner" + msg.channel.id
+              "ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id
             )
           )
           .send(
@@ -121,11 +121,11 @@ exports.run = async function (bot, msg, db) {
     msg.channel.delete();
     db.add(
       "userticketdata." +
-        db.get("ticketdata." + msg.guild.id + ".ticketowner" + msg.channel.id) +
+        db.get("ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id) +
         ".opentickets",
       -1
     );
-    db.delete("ticketdata." + msg.guild.id + ".ticketowner" + msg.channel.id);
+    db.delete("ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id);
     db.delete(
       "ticketdata." + msg.guild.id + ".ticketmembers." + msg.channel.id
     );
@@ -148,7 +148,7 @@ exports.formatmsg = formatmsg;
 
 function makehtml(html, json) {
   let returnmsg =
-    `<div class="header1"><div class="header2"><img src="${json.icon}"/></div><p>${json.name}</p>` +
+    `<title>Transcript from ${json.name}</title><div class="header1"><div class="header2"><img src="${json.icon}"/></div><p>${json.name}</p>` +
     `<p id="msgs">Collecting messages</p></div>`;
   returnmsg += html;
   returnmsg +=

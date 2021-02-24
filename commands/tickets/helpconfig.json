@@ -1,0 +1,17 @@
+{
+  "note": "This is only used for the help command display, not the actual command",
+  "permission": "EVERYONE",
+  "roles": [],
+  "description":"",
+  "comments": {
+    "permission": [
+      "Permission level to use the command",
+      "Options: EVERYONE/MODERATOR/ADMINISTRATOR"
+    ],
+    "roles": [
+      "Any roles that bypass the permission check",
+      "Use the roles ID for this instead of name"
+    ],
+    "description":["Short summary for what the category is"]
+  }
+}

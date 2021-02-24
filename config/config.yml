@@ -10,3 +10,10 @@ bot:
     message: "With open source code" # Status message
   embed:
     color: "#00FFFF" # Any HEX color code or RANDOM
+
+server:
+  roles:
+    mod:
+      - "1234567890" # Replace with your mod/admin role ids
+    admin:
+      - "1234567890" # Replace with your mod/admin role ids

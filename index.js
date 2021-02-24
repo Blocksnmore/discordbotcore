@@ -1,5 +1,6 @@
 const discord = require("discord.js");
 const fs = require("fs");
+const ms = require("ms");
 const db = require("quick.db");
 const config = require("./utils/yml.js")("./config/config.yml");
 const bot = new discord.Client({
@@ -76,20 +77,18 @@ bot.on("message", async (msg) => {
     let args = msg.content.toString().split(" ");
     let command = args[0].toLowerCase().substring(p.length);
     if (!commands.has(command)) return;
-    if (usercooldown.has(msg.author.id))
+    if (usercooldown.has(msg.author.id)) {
       return msg.channel.send(
         require("./utils/embed.js")({
           title: "Slow down!",
           description:
             "You are currently on cooldown!\nPlease wait " +
-            (
-              (Date.now() + 4000 - usercooldown.get(msg.author.id)) /
-              1000
-            ).toFixed(1) +
+            ((usercooldown.get(msg.author.id) - Date.now()) / 1000).toFixed(1) +
             " seconds before running a new command!",
         })
       );
-    usercooldown.set(msg.author.id, Date.now());
+    }
+    usercooldown.set(msg.author.id, Date.now() + 5000);
     setTimeout(function () {
       usercooldown.delete(msg.author.id);
     }, 5000);

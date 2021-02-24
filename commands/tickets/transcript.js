@@ -1,3 +1,4 @@
+const { MessageAttachment } = require("discord.js")
 exports.info = {
   command: "transcript",
   aliases: ["tickettranscript"], // Leave empty for no aliases
@@ -72,8 +73,8 @@ exports.run = async function (bot, msg, db) {
     });
 };
 function formatmsg(params) {
-  require("./close.js").formatmsg(params);
+  return require("./close.js").formatmsg(params);
 }
 function makehtml(params, paramstwo) {
-  require("./close.js").makehtml(params, paramstwo);
+  return require("./close.js").makehtml(params, paramstwo);
 }

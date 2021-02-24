@@ -13,7 +13,6 @@ exports.run = async function (bot, msg, db) {
         description: "The `TICKET` commands are currently disabled!",
       })
     );
-
   let userdata = db.get("userticketdata." + msg.author.id) || {};
   if (!userdata.opentickets)
     db.set("userticketdata." + msg.author.id + ".opentickets", 0);
@@ -51,7 +50,7 @@ exports.run = async function (bot, msg, db) {
     })
     .then((c) => {
       db.set(
-        "ticketdata." + msg.guild.id + ".ticketowner" + c.id,
+        "ticketdata." + msg.guild.id + ".ticketowner." + c.id,
         msg.author.id
       );
       db.set("ticketdata." + msg.guild.id + ".ticketmembers." + c.id, []);
