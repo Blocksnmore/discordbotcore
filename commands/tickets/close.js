@@ -121,7 +121,9 @@ exports.run = async function (bot, msg, db) {
     msg.channel.delete();
     db.add(
       "userticketdata." +
-        db.get("ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id) +
+        db.get(
+          "ticketdata." + msg.guild.id + ".ticketowner." + msg.channel.id
+        ) +
         ".opentickets",
       -1
     );
@@ -135,9 +137,11 @@ exports.run = async function (bot, msg, db) {
 function formatmsg(json) {
   let returnmsg = `<div class="msg"><div class="text"><img src="${
     json.pfp
-  }"/></div><p>${json.tag}     ${new Date(json.time).toString()}</p><p>${
+  }"/></div><p>${json.tag}     ${new Date(
+    json.time
+  ).toString()}</p><p>${require("../../utils/markdown.js").toHTML(
     json.msg
-  }</p>`;
+  )}</p>`;
   if (json.att)
     json.att.forEach((a) => {
       returnmsg += "<p>" + a + "</p>";
